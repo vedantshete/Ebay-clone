@@ -1,0 +1,129 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ebay</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <link rel="stylesheet" href="templates/css/bootstrap.css">
+    <link rel="stylesheet" href="templates/css/font-awesome.css">
+    <link rel="stylesheet" href="templates/css/styles.css">
+    <link rel="stylesheet" href="templates/css/mystyles.css">
+    <link rel="stylesheet" href="templates/css/switcher.css" />
+    <script src="angularjs/cartng.js"></script>
+</head>
+
+<body ng-app="getcartapp" ng-controller="getcart" ng-init="getcart()">
+<div class="global-wrapper clearfix" id="global-wrapper">
+<div class="container">
+<br>
+<div>
+<div>
+	
+	<div class="navbar-header">
+        <a href="index.html">
+        <img src="templates/img/logo.png" alt="ebay" title="Image Title" />
+        </a>
+    </div>
+    <div class="input-group">
+    	<input type="text" class="form-control" placeholder="Search...">
+    	<div class="input-group-btn">
+        <button type="button" class="btn btn-primary">Search</button>
+      </div><!-- /btn-group -->
+      
+      <!--<div class="navbar-right">Your cart<span class="glyphicon glyphicon-shopping-cart"></span></div>-->
+    </div><!-- /input-group -->
+   
+</div>
+</div>
+<div class="gap-small"></div>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+	<ul class="nav navbar-nav">
+		<li><a href="/homepage">Home</a></li>
+        <li><a href="/sell">Sell</a></li>
+        <li class="dropdown "><a class="dropdown-toggle" data-toggle="dropdown" href="#">History</a>
+        <ul class="dropdown-menu">
+          <li><a href="/bought">Products Bought</a></li>
+          <li><a href="/sold">Products Sold</a></li>
+        </ul></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile</a>
+        <ul class="dropdown-menu">
+          <li><a href="/profile">My Profile</a></li>
+          <li><a href="/myAds">My Advertisements</a></li>
+        </ul></li>
+        <li><a href="/logininfo">Login Info</a></li>
+
+        <li class="active"><a href="/cart" class="glyphicon glyphicon-shopping-cart">Cart</a></li>
+        <li><a href="/logout">Sign out</a></li>
+	</ul>
+	</div>
+	</nav>
+	</div>
+
+
+
+
+
+
+  <div class="container">
+           
+                <h2>My Cart</h2>
+            <div class="row">
+                <div class="col-md-10">
+                    <table class="table table table-shopping-cart">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="x in getcartitems">
+
+                                <td class="table-shopping-cart-title"><a href="#">{{x.name}}</a>
+                                </td>
+                                <td>$ {{x.price}}</td>
+                                <td>
+                                    <input class="table-shopping-qty" type="number" ng-model="quantityincart" min="1" ng-init="quantityincart=1" max="{{x.quantity}}" ng-change="updatequantity(quantityincart,$index)"/>
+                                
+                                </td>
+                                <td ng-model="total">{{x.price*x.quantityincart}}</td>
+                                <td>
+                                    <a class="glyphicon glyphicon-remove-sign" ng-click="removeitem(x._id)"></a>
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                    <div class="gap gap-small"></div>
+                </div>
+                <div class="col-md-2">
+                    <ul class="shopping-cart-total-list" >
+                        
+                        <li><span>Shipping</span><span>Free</span>
+                        </li>
+                        <li><span>Tax</span><span>$2</span>
+                        </li>
+                        <li><span>Total</span><span>${{grandtotal}}</span>
+                        </li>
+                    </ul><a class="btn btn-primary" ng-click="checkout()">Checkout</a>
+                </div>
+            </div>
+            <ul class="list-inline">
+                <li><a class="btn btn-default" href="/homepage">Continue Shopping</a>
+                </li>
+                
+            </ul>
+    </div></div>
+</body>
+</html>

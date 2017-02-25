@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ebay | Sell</title>
+  
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    
+<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="templates/css/bootstrap.css">
+    <link rel="stylesheet" href="templates/css/font-awesome.css">
+    <link rel="stylesheet" href="templates/css/styles.css">
+    <link rel="stylesheet" href="templates/css/mystyles.css">
+    <link rel="stylesheet" href="templates/css/switcher.css" />
+	  <script src="angularjs/paymentng.js"></script>
+    <link rel="stylesheet" href="stylesheets/login.css">
+</head>
+
+
+<body ng-app="enditapp" ng-controller="endit">
+<div class="global-wrapper clearfix" id="global-wrapper">
+<div class="container">
+<br>
+<div>
+<div>
+	
+	<div class="navbar-header">
+        <a href="index.html">
+        <img src="templates/img/logo.png" alt="ebay" title="Image Title" />
+        </a>
+    </div>
+    <div class="input-group">
+    	<input type="text" class="form-control" placeholder="Search...">
+    	<div class="input-group-btn">
+        <button type="button" class="btn btn-primary">Search</button>
+      </div><!-- /btn-group -->
+      
+      <!--<div class="navbar-right">Your cart<span class="glyphicon glyphicon-shopping-cart"></span></div>-->
+      
+
+    </div><!-- /input-group -->
+   
+</div>
+</div>
+<div class="gap-small"></div>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+	<ul class="nav navbar-nav">
+		<li><a href="/homepage">Home</a></li>
+        <li><a href="/sell">Sell</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">History</a>
+        <ul class="dropdown-menu">
+          <li><a href="/bought">Products Bought</a></li>
+          <li><a href="/sold">Products Sold</a></li>
+        </ul></li></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile</a>
+        <ul class="dropdown-menu">
+          <li><a href="/profile">My Profile</a></li>
+          <li><a href="/myAds">My Advertisements</a></li>
+        </ul></li>
+        <li><a href="/logininfo">Login Info</a></li>
+
+        <li><a href="/cart" class="glyphicon glyphicon-shopping-cart">Cart</a></li>
+        <li><a href="/logout">Sign out</a></li>
+	</ul>
+	</div>
+	</nav>
+<br>
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-md-offset-4">
+<div class="form-body">
+    <ul class="nav nav-tabs final-login">
+        <li class="active"><a data-toggle="tab" href="#sectionA">Payment</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade in active">
+        <div class="innter-form">
+            <form class="sa-innate-form">
+            <label>Credit Card number</label>
+            <input type="text" placeholder="Credit card number" ng-model="number" pattern="[0-9]{16}" title="16-digit Credit card number" required>
+            <label>Expiry date</label>
+            <input type="text" placeholder="MM/YY" ng-model="expiry" required>
+            <label>CVV</label>
+            <input type="text" placeholder="CVV" ng-model="cvv" pattern="[0-9]{3}" title="3-digit CVV" required>
+            
+            <button type="submit" ng-click="endit()">Make payment</button>
+            </form>
+					
+            </div>
+            
+            <div class="clearfix"></div>
+        </div>
+        
+    </div>
+    </div>
+    </div>
+    </div>
+    </div><br><br><br><br><br><br><br><br></div></div>	
+    </body>
+    </html>

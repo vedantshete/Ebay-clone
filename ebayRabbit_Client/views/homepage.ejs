@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ebay</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <link rel="stylesheet" href="templates/css/bootstrap.css">
+    <link rel="stylesheet" href="templates/css/font-awesome.css">
+    <link rel="stylesheet" href="templates/css/styles.css">
+    <link rel="stylesheet" href="templates/css/mystyles.css">
+    <link rel="stylesheet" href="templates/css/switcher.css" />
+    <script src="angularjs/homepageng.js"></script>
+</head>
+
+<body ng-app="homepageapp" ng-controller="homepage" ng-init="homepage()">
+<div class="global-wrapper clearfix" id="global-wrapper">
+<div class="container">
+<br>
+<div>
+<div>
+	
+	<div class="navbar-header">
+        <a href="index.html">
+        <img src="templates/img/logo.png" alt="ebay" title="Image Title" />
+        </a>
+    </div>
+    <div class="input-group">
+    	<input type="text" class="form-control" placeholder="Search...">
+    	<div class="input-group-btn">
+        <button type="button" class="btn btn-primary">Search</button>
+      </div><!-- /btn-group -->
+      
+      <!--<div class="navbar-right">Your cart<span class="glyphicon glyphicon-shopping-cart"></span></div>-->
+      
+     
+    </div><!-- /input-group -->
+   
+</div>
+</div>
+<div class="gap-small"></div>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+	<ul class="nav navbar-nav">
+		<li class="active"><a href="/homepage">Home</a></li>
+		<li><a href="/sell">Sell</a></li>
+		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">History</a>
+        <ul class="dropdown-menu">
+          <li><a href="/bought">Products Bought</a></li>
+          <li><a href="/sold">Products Sold</a></li>
+        </ul></li></li>
+		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile</a>
+		<ul class="dropdown-menu">
+          <li><a href="/profile">My Profile</a></li>
+          <li><a href="/myAds">My Advertisements</a></li>
+        </ul></li>
+		<li><a href="/logininfo">Login Info</a></li>
+		<li><a href="/cart" class="glyphicon glyphicon-shopping-cart">Cart</a></li>
+		<li><a href="/logout">Sign out</a></li>
+	</ul>
+	</div>
+	</nav>
+	</div>
+	<div class="container">
+    <div id="products" class="row list-group" >
+        <div class="item  col-xs-4 col-lg-4" ng-repeat="x in getproduct" ng-if="x.quantity>0">
+            <div class="thumbnail" >
+                
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">{{x.name}}</h4>
+                    <p class="group inner list-group-item-text">{{x.description}}</p>
+                    <p class="group inner list-group-item-text">
+                                Quantity: {{x.quantity}}</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                Price: ${{x.price}}</p>
+                        </div>
+                         
+                        <div class="col-xs-12 col-md-6" ng-if="x.forBid==0">
+                            <a class="btn btn-success" ng-href="/productdetail?productid={{x._id}}" >Show Details</a>
+                        </div>
+                        <div class="col-xs-12 col-md-6" ng-if="x.forBid==1">
+                            <a class="btn btn-info" ng-href="/productbid?productid={{x._id}}" >Place Your Bid</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

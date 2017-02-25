@@ -1,0 +1,103 @@
+a,
+.navbar-nav > li:hover > a,
+.dropdown-menu-category-title,
+.dropdown-menu-category-list > li > a:hover,
+.dropdown-menu-shipping-cart-price,
+.dropdown-menu-items-list > li > a:hover,
+.category-selections-icon.active,
+.category-selections-icon.active:hover,
+.category-pagination > li > a,
+.blog-post-title > a:hover,
+.product-page-product-rating.product-rating-big > li.count,
+.product-page-qa-question:before,
+.product-page-qa-answer:before,
+.product-review-thumb-product-title > a:hover,
+.btn-ghost.btn-primary,
+.comment comment-review-rate {
+  color: #12a641;
+}
+.box-highlight {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25) , 0 0 8px rgba(18,166,65,0.55);
+}
+.navbar-main {
+  background: #0d7d31;
+}
+.navbar-nav > li.open > a {
+  background: #0b6427 !important;
+}
+.navbar-main .navbar-border > li {
+  border-right: 1px solid #24364c;
+}
+.navbar-main .navbar-border > li:last-child {
+  border-right: none;
+}
+.navbar-before-inverse,
+.navbar-main-white .navbar-nav > li:hover > a,
+.navbar-main-white .navbar-main-search-submit,
+.navbar-main-white .navbar-main-search-submit:hover,
+.dropdown-menu-category > li:hover > a,
+.main-header-input-center-btn,
+.category-pagination > li.last > a,
+.category-tabs .nav-pills li.active > a,
+.blog-sidebar-tags > li > a:hover,
+.product-icon-quick-view,
+.product-plus,
+.product-quick-view:hover,
+.product-labels > li,
+.product-review-rate:hover,
+.btn-ghost.btn-primary:hover,
+.i-check.i-check-stroke.checked:before,
+.irs-slider {
+  background: #12a641;
+}
+.navbar-main-white .dropdown-menu {
+  border-top: 2px solid #12a641;
+}
+.main-header {
+  background: #0d7d31;
+  border-bottom: 1px solid #0d742e;
+}
+.main-footer {
+  border-top: 2px solid #12a641;
+}
+.category-filters-color {
+  background: #0d7d31;
+}
+.category-filters-color .category-filters-section {
+  border-color: #0b6427;
+}
+.category-pagination > li > a:hover,
+.category-pagination > li.last > a,
+.blog-sidebar-tags > li > a:hover {
+  border-color: #12a641;
+}
+.product-icon-quick-view:hover {
+  background: #119e3e;
+}
+.product-plus:hover {
+  background: #0f8d37;
+}
+.btn-primary {
+  background: #12a641;
+  border-color: #10953b;
+}
+.btn-primary:hover {
+  background: #10953b;
+  border-color: #0e8534;
+}
+.btn-primary:focus {
+  background: #10953b;
+  border-color: #0e8534;
+}
+.i-check.hover,
+.i-radio.hover {
+  border: 1px solid #12a641;
+}
+.i-check.checked,
+.i-radio.checked {
+  border: 1px solid #12a641;
+  background: #12a641;
+}
+.jqzoom-list > li > a.zoomThumbActive > img {
+  box-shadow: 0 0 0 2px rgba(18,166,65,0.75);
+}

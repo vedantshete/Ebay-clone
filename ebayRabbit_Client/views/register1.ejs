@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ebay | Register</title>
+  
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    
+<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	  <script src="angularjs/signinng.js"></script>
+    <link rel="stylesheet" href="stylesheets/login.css">
+</head>
+<body ng-app="signinapp" ng-controller="signin">
+<br><br>
+<div class="container">
+
+    <div class="row">
+    
+     <img src="templates/img/logo.png" align="center" height="80" width="160" class="center-block"></div>
+    </div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-md-offset-4">
+<div class="form-body">
+    <ul class="nav nav-tabs final-login">
+        <li class="active"><a data-toggle="tab" href="#sectionA"> Register</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade in active">
+        <div class="innter-form">
+            <form class="sa-innate-form">
+            <input type="date" name="username" placeholder="Birthday" ng-model="birthday" required> 
+            <input type="text" name="username" placeholder="Ebay handle" ng-model="handle" ng-change="check_handle()" required>
+            <div class="alert alert-success" ng-hide="valid_handle">
+						<strong>Congratulations! This handle is available</strong>
+					</div>
+				<div class="alert alert-danger" ng-hide="invalid_handle">
+						<strong>This handle is not available</strong>
+					</div>
+            <input type="number" name="password" placeholder="Mobile number" ng-model="mobile" maxlength="10" required>
+            <input type="text" name="password" placeholder="Place" ng-model="place" required>
+            <button type="button" ng-click="register1();">Register</button>
+            <p>By clicking Register, you agree to Ebay's User Agreement, Privacy Policy, and Cookie Policy.</p>
+
+            </form>
+					
+            </div>
+            
+            <div class="clearfix"></div>
+        </div>
+        
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </body>
+    </html>
